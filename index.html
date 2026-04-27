@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        /* Container styling */
+        .mind-map {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* General Details Styling */
+        details {
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        /* Summary (The Clickable Bar) */
+        summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 12px 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            outline: none;
+            user-select: none;
+        }
+
+        /* Custom Arrow */
+        summary::before {
+            content: '▶';
+            margin-right: 12px;
+            font-size: 0.8em;
+            transition: transform 0.2s;
+            color: #666;
+        }
+
+        details[open] > summary::before {
+            transform: rotate(90deg);
+        }
+
+        /* Level 1: Main System */
+        .main-system > summary {
+            background-color: #b39ddb; /* Purple */
+            color: white;
+            font-size: 1.1em;
+        }
+
+        /* Level 2: Sub-chapter */
+        .sub-chapter {
+            margin-left: 30px;
+            margin-top: 8px;
+        }
+        .sub-chapter > summary {
+            background-color: #bbdefb; /* Blue */
+            border: 1px solid #90caf9;
+        }
+
+        /* Level 3: System 1 / System 2 */
+        .inner-system {
+            margin-left: 35px;
+            margin-top: 5px;
+        }
+        .inner-system > summary {
+            background-color: #e1f5fe; /* Light Blue */
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        /* Level 4: Final Content (The leaf) */
+        .content-box {
+            margin-left: 40px;
+            padding: 10px 15px;
+            background-color: #ffffff;
+            border-left: 3px solid #b9f6ca; /* Green edge */
+            margin-top: 5px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.02);
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="mind-map">
+    <details class="main-system" open>
+        <summary>Aircraft Electrical System</summary>
+        
+        <details class="sub-chapter">
+            <summary>Chapter 1 : Fundamental of Electrical</summary>
+            
+            <details class="inner-system">
+                <summary>Chapter အနှစ်ချုပ်</summary>
+                <div class="content-box">
+                  <button class="btn-home" onclick="go1Summery()">အနှစ်ချုပ်ဖတ်ရန် နှိပ်ပါ...</button>
+                </div>
+                <div class="content-box">
+                    အာဏာသက်ရောက်မည့်နေ့: ၂၀၂၆ ဖေဖော်ဝါရီ ၀၆
+                </div>
+            </details>
+
+            <details class="inner-system">
+                <summary>System 2</summary>
+                <div class="content-box">
+                    ဒီဇိုင်းခွင့်ပြုချက်ပိုင်ရှင်: Airbus
+                </div>
+            </details>
+
+        </details>
+
+        <details class="sub-chapter">
+            <summary>လိုအပ်သော လုပ်ဆောင်ချက်များ</summary>
+            <div class="content-box">
+                ဆောင်ရွက်ရမည့် အချက်များ...
+            </div>
+        </details>
+
+    </details>
+</div>
+<script>
+
+ function go1Summery() {
+    window.location.href = "Elec_summery.html";
+  }
+</script>
+</body>
+</html>
