@@ -2,23 +2,26 @@
 <html lang="my">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding: 40px;
+            /* Mobile မှာ padding ကို လျှော့လိုက်ပါတယ် */
+            padding: 15px; 
             background-color: #f0f2f5;
             color: #333;
+            margin: 0;
         }
 
         /* Container styling */
         .mind-map {
-            max-width: 800px;
+            max-width: 100%; /* Mobile screen အပြည့်ယူရန် */
             margin: 0 auto;
         }
 
         /* General Details Styling */
         details {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             transition: all 0.3s ease;
         }
 
@@ -26,21 +29,29 @@
         summary {
             list-style: none;
             cursor: pointer;
-            padding: 12px 20px;
-            border-radius: 8px;
+            /* ဖုန်းနဲ့ နှိပ်ရလွယ်အောင် padding ကို ပိုကြီးပေးထားပါတယ် */
+            padding: 18px 20px; 
+            border-radius: 10px;
             display: flex;
             align-items: center;
             font-weight: 600;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             outline: none;
             user-select: none;
+            /* စာလုံးအရွယ်အစားကို ပိုကြီးပေးထားပါတယ် */
+            font-size: 1.1rem; 
+        }
+
+        /* Chrome/Safari မှာ မြှားအဟောင်းကို ဖျောက်ရန် */
+        summary::-webkit-details-marker {
+            display: none;
         }
 
         /* Custom Arrow */
         summary::before {
             content: '▶';
-            margin-right: 12px;
-            font-size: 0.8em;
+            margin-right: 15px;
+            font-size: 0.9em;
             transition: transform 0.2s;
             color: #666;
         }
@@ -53,40 +64,53 @@
         .main-system > summary {
             background-color: #b39ddb; /* Purple */
             color: white;
-            font-size: 1.1em;
+            font-size: 1.25rem; /* အကြီးဆုံး ခေါင်းစဉ် */
         }
 
         /* Level 2: Sub-chapter */
         .sub-chapter {
-            margin-left: 30px;
-            margin-top: 8px;
+            margin-left: 15px; /* Mobile မှာ ဘေးနေရာလွတ် အရမ်းမများအောင် လျှော့ထားပါတယ် */
+            margin-top: 10px;
         }
         .sub-chapter > summary {
             background-color: #bbdefb; /* Blue */
             border: 1px solid #90caf9;
+            font-size: 1.1rem;
         }
 
         /* Level 3: System 1 / System 2 */
         .inner-system {
-            margin-left: 35px;
-            margin-top: 5px;
+            margin-left: 20px;
+            margin-top: 8px;
         }
         .inner-system > summary {
             background-color: #e1f5fe; /* Light Blue */
-            font-size: 0.95em;
+            font-size: 1rem;
             font-weight: 500;
+            padding: 15px;
         }
 
         /* Level 4: Final Content (The leaf) */
         .content-box {
-            margin-left: 40px;
-            padding: 10px 15px;
+            margin-left: 25px;
+            padding: 15px 20px;
             background-color: #ffffff;
-            border-left: 3px solid #b9f6ca; /* Green edge */
+            border-left: 4px solid #b9f6ca; /* Green edge */
             margin-top: 5px;
-            border-radius: 4px;
-            font-size: 0.9em;
+            border-radius: 6px;
+            font-size: 1rem;
             box-shadow: inset 0 0 5px rgba(0,0,0,0.02);
+        }
+
+        /* Button Styling for Mobile */
+        .btn-home {
+            width: 100%; /* ခလုတ်ကို screen အပြည့်နီးပါး ကြီးပေးလိုက်ပါတယ် */
+            padding: 12px;
+            font-size: 1rem;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            cursor: pointer;
         }
 
     </style>
