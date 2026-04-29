@@ -104,13 +104,13 @@
                     <details class="inner-system">
                         <summary>Chapter အနှစ်ချုပ်</summary>
                         <div class="content-box">
-                            <button class="btn-home" onclick="go1Summery()">အနှစ်ချုပ်ဖတ်ရန် နှိပ်ပါ...</button>
+                            <button class="btn-home" onclick="goPage('Elec_summery')">အနှစ်ချုပ်ဖတ်ရန် နှိပ်ပါ...</button>
                         </div>
                     </details>
                     <details class="inner-system">
                         <summary>Chapter 1.1 Electron Theory</summary>
                         <div class="content-box">
-                            <button class="btn-home" onclick="go1Summery()">Chapter 1.1 ဖတ်ရန် နှိပ်ပါ...</button>
+                            <button class="btn-home" onclick="goPage('part1.1')">Chapter 1.1 ဖတ်ရန် နှိပ်ပါ...</button>
                         </div>
                     </details>
                 </div>
@@ -127,8 +127,8 @@
 </div>
 
 <script>
-    function go1Summery() {
-        window.location.href = "Elec_summery.html";
+     function goPage(page) {
+      window.location.href = page + ".html";
     }
 </script>
 
